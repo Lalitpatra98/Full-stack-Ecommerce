@@ -6,8 +6,6 @@ import {
   NavbarItem,
   NavbarMenuToggle,
   NavbarMenu,
-  NavbarMenuItem,
-  
   Button,
 } from "@nextui-org/react";
 import { Link } from "react-router";
@@ -29,39 +27,32 @@ function App() {
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar onMenuOpenChange={setIsMenuOpen} className="w-full"  position="static">
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand>
-          <p className="font-bold text-inherit">ACME</p>
+          <Link to={'/'}> <p className="font-bold text-inherit">ACME</p></Link>
+         
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-      <NavbarItem isActive>
-          <Link to={"/"}>
-          Home 
-          </Link>
+        <NavbarItem isActive>
+          <Link to={"/"}>Home</Link>
         </NavbarItem>
         <NavbarItem>
-          <Link to={"/Collection"}>
-          Collection
-          </Link>
-        </NavbarItem>
-      
-        <NavbarItem>
-          <Link to={"/About"}>
-            About 
-          </Link>
+          <Link to={"/Collection"}>Collection</Link>
         </NavbarItem>
 
         <NavbarItem>
-          <Link to={"/Contact"}>
-          Contact
-          </Link>
+          <Link to={"/About"}>About</Link>
+        </NavbarItem>
+
+        <NavbarItem>
+          <Link to={"/Contact"}>Contact</Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
@@ -69,29 +60,18 @@ function App() {
           <Link to={"/LogIn"}>Login</Link>
         </NavbarItem>
         <NavbarItem>
-          <Button  color="primary"  variant="flat">
-            <Link>
-              Sign Up
-            </Link>
-          
+          <Button color="primary" variant="flat">
+            <Link>Sign Up</Link>
           </Button>
         </NavbarItem>
       </NavbarContent>
 
       {/* side menu item */}
       <NavbarMenu>
-      <NavLink to={"/"}>
-        Home
-      </NavLink>
-      <NavLink to={"/Collection"}>
-        Collection
-      </NavLink>
-      <NavLink to={"/About"}>
-        About
-      </NavLink>
-      <NavLink to={"/Contact"}>
-        Contact
-      </NavLink>
+        <NavLink to={"/"}>Home</NavLink>
+        <NavLink to={"/Collection"}>Collection</NavLink>
+        <NavLink to={"/About"}>About</NavLink>
+        <NavLink to={"/Contact"}>Contact</NavLink>
       </NavbarMenu>
     </Navbar>
   );

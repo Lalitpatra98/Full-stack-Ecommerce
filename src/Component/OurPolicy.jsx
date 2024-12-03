@@ -4,7 +4,7 @@ import { PiKeyReturnFill } from "react-icons/pi";
 import { FaExchangeAlt } from "react-icons/fa";
 const OurPolicy = () => {
   return (
-    <div className="flex flex-col sm:flex-row justify-around gap-12 text-center  p-10">
+    <div className="flex flex-col sm:flex-row justify-around gap-12 text-center  p-10 my-14">
       <div className="flex flex-col items-center">
         <FaExchangeAlt className="size-10"/>
         <p> Easy Exchange Police</p>

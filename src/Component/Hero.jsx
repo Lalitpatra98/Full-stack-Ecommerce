@@ -3,13 +3,13 @@ import Img from "../assets/HeroImg.jpg";
 const Hero = () => {
   return (
     <div >
-      <div className=" border border-gray-700 w-[700px] mx-auto rounded">
-        <div className="hero-content flex-col lg:flex-row-reverse gap-32  ">
-          <img src={Img} className="max-w-sm h-96 rounded-lg shadow-2xl" />
-          <div>
-            <p className="">---------Our Bestseller</p>
+      <div className=" w-48  mx-auto rounded">
+        <div className="hero-content flex-col  md:flex-row-reverse ">
+          <img src={Img} className="  rounded-lg shadow-2xl" />
+          <div className=" md:px-2 ">
+            <p className="w-40">---------Our Bestseller</p>
             <h1 className="text-2xl font-medium ">Box Office News</h1>
-            <p>shop now-----------</p>
+            <p>shop now ---------</p>
           </div>
         </div>
       </div>

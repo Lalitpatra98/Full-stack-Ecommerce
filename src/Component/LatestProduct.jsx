@@ -5,7 +5,9 @@ import Product from "./Product";
 const LatestProduct = () => {
   const { data } = useContext(ShopContext);
   const [ItemList,setItemList] =useState([])
-    console.log(data);
+    
+  console.log(data.map(obj =>obj.category))
+  
     
   useEffect(() => (
     setItemList(data.slice(0,10))
@@ -13,7 +15,7 @@ const LatestProduct = () => {
   return (
     <div>
       <Title text1={"Latest"} text2={"Section"} />
-      <p>
+      <p className="text-center">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dicta
         nulla accusamus, Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
       </p>
@@ -33,7 +35,7 @@ const LatestProduct = () => {
       </div> */}
 
         {/* second Approch */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-6 ">
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-6 ">
         {
           ItemList?.map((item,index)=>(
             <Product key={index} id={item.id} price={item.price} image={item.image} name={item.title} />
